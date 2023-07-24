@@ -1,0 +1,10 @@
+info:
+  name: "入门案例1"
+
+server:
+  #端口号
+  port: 9601
+
+logging:
+  file:
+    name: "logs/config/demo-xx.log"
