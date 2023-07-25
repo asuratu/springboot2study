@@ -40,8 +40,10 @@ public class BasicController {
     @ResponseBody
     public User user() {
         User user = new User();
-        user.setName("theonefx");
-        user.setAge(666);
+        user.setName("张三");
+        user.setAge(31);
+        System.out.println("Hello Java");
+
         return user;
     }
 
@@ -54,7 +56,7 @@ public class BasicController {
 
     // http://127.0.0.1:8080/html
     @RequestMapping("/html")
-    public String html(){
+    public String html() {
         return "index.html";
     }
 
