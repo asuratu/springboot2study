@@ -9,4 +9,4 @@ git add .
 git commit -m "$CONTENT"
 git push
 
-
+echo "git push success"
