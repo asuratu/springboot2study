@@ -9,7 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @author asura
  */
 @SpringBootApplication
-public class Springboot0101QuickstartApplication {
+public class Application {
 
     public static void main(String[] args) {
         // 可配置应用上下文
