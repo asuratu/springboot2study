@@ -10,7 +10,7 @@ git commit -m "$CONTENT"
 
 echo "git commit success"
 
-git pull
+git pull origin main
 
 git push
 
