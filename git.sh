@@ -8,10 +8,10 @@ fi
 git add .
 git commit -m "$CONTENT"
 
-echo "git commit success"
+echo ">>>>>>>>>>>> git commit success"
 
 git pull origin main
 
 git push
 
-echo "git push success"
+echo ">>>>>>>>>>>> git push success"
