@@ -11,6 +11,7 @@ import top.jacktgq.pojo.Book;
 @Mapper
 public interface BookMapper extends BaseMapper<Book> {
 
+    // 不使用MyBatisPlus时，使用@Mapper注解
     @Select("select * from tbl_book where id = #{id}")
     Book getBookById(Integer id);
 }
