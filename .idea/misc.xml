@@ -16,7 +16,6 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/springboot_02_ base_configuration/pom.xml" />
-        <option value="$PROJECT_DIR$/springboot_05_mybatis/pom.xml" />
       </set>
     </option>
   </component>

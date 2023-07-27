@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springboot_03_yaml" />
+        <module name="springboot_05_mybatis" />
         <module name="springboot_01_01_quickstart" />
         <module name="springboot_01_02_quickstart" />
         <module name="springboot_02_base_configuration" />
@@ -18,7 +19,6 @@
       <module name="springboot_02_ base_configuration" target="1.8" />
       <module name="springboot_02_base_configuration (1)" target="1.8" />
       <module name="springboot_02_base_configuration (2)" target="1.8" />
-      <module name="springboot_05_mybatis" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
