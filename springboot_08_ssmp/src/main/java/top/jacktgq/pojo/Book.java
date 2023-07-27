@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Data
+// @AllArgsConstructor
+// @NoArgsConstructor
 public class Book {
     private Integer id;
     private String name;
