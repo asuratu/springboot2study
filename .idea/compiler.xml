@@ -12,6 +12,7 @@
         <module name="springboot_03_yaml" />
         <module name="springboot_05_mybatis" />
         <module name="springboot_01_01_quickstart" />
+        <module name="springboot_07_druid" />
         <module name="springboot_02_base_configuration" />
         <module name="springboot_06_mybatis_plus" />
       </profile>
@@ -32,6 +33,7 @@
       <module name="springboot_04_junit" options="-parameters" />
       <module name="springboot_05_mybatis" options="-parameters" />
       <module name="springboot_06_mybatis_plus" options="-parameters" />
+      <module name="springboot_07_druid" options="-parameters" />
     </option>
   </component>
 </project>
