@@ -1,5 +1,6 @@
 package top.jacktgq.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,12 +12,12 @@ import java.util.List;
  * @author AsuraTu
  */
 @SpringBootTest
-public class BookServiceTest {
+public class IBookServiceTest {
 
     // 业务层的方法必须要写测试用例的 !!!!!!!!!
 
     @Autowired
-    BookService bookService;
+    IBookService bookService;
 
     @Test
     void testSave() {
@@ -30,7 +31,7 @@ public class BookServiceTest {
 
     @Test
     void testDeleteById() {
-        System.out.println(bookService.deleteById(31));
+        System.out.println(bookService.removeById(32));
     }
 
     @Test
@@ -51,9 +52,20 @@ public class BookServiceTest {
 
     @Test
     void testGetAll() {
-        List<Book> all = bookService.getAll();
+        List<Book> all = bookService.list();
         for (Book book : all) {
             System.out.println(book);
+        }
+    }
+
+    @Test
+    void testGetAllByPage() {
+        Page<Book> bookPage = new Page<>(2, 3);
+        bookService.page(bookPage);
+
+        List<Book> records = bookPage.getRecords();
+        for (Book record : records) {
+            System.out.println(record);
         }
     }
 }

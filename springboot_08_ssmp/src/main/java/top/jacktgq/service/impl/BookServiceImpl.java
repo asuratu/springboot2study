@@ -1,44 +1,20 @@
 package top.jacktgq.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import top.jacktgq.mapper.BookMapper;
 import top.jacktgq.pojo.Book;
-import top.jacktgq.service.BookService;
-
-import java.util.List;
+import top.jacktgq.service.IBookService;
 
 /**
  * @author AsuraTu
  */
 @Service
-public class BookServiceImpl implements BookService {
-
-    @Autowired
-    private BookMapper bookMapper;
+public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements IBookService {
 
     @Override
     public boolean save(Book book) {
-        return bookMapper.insert(book) > 0;
-    }
-
-    @Override
-    public boolean deleteById(Integer id) {
-        return bookMapper.deleteById(id) > 0;
-    }
-
-    @Override
-    public boolean updateById(Book book) {
-        return bookMapper.updateById(book) > 0;
-    }
-
-    @Override
-    public Book getById(Integer id) {
-        return bookMapper.selectById(id);
-    }
-
-    @Override
-    public List<Book> getAll() {
-        return bookMapper.selectList(null);
+        book.setName("MybatisPlus " + book.getName());
+        return super.save(book);
     }
 }
