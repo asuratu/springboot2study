@@ -1,6 +1,5 @@
 package top.jacktgq.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import top.jacktgq.pojo.Book;
 import top.jacktgq.service.IBookService;
@@ -14,12 +13,14 @@ import java.util.List;
 @RequestMapping("/books")
 public class BookController {
 
-    @Autowired
-    private IBookService bookService;
+    private final IBookService bookService;
+
+    public BookController(IBookService bookService) {
+        this.bookService = bookService;
+    }
 
     /**
      * 查询全部书籍
-     *
      * @return List<Book> 书籍列表
      */
     @GetMapping
