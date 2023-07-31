@@ -2,10 +2,10 @@ package top.jacktgq.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.*;
+import top.jacktgq.controller.utils.PageResponse;
+import top.jacktgq.controller.utils.R;
 import top.jacktgq.pojo.Book;
 import top.jacktgq.service.IBookService;
-
-import java.util.List;
 
 /**
  * @author AsuraTu
@@ -25,40 +25,40 @@ public class BookController {
      * @return List<Book> 书籍列表
      */
     @GetMapping
-    public List<Book> index() {
-        return bookService.list();
+    public R index() {
+        return new R(true, bookService.list());
     }
 
     // 保存书籍
     @PostMapping
-    public String save(@RequestBody Book book) {
+    public R save(@RequestBody Book book) {
         bookService.save(book);
-        return "success";
+        return new R(true, "add success");
     }
 
     @PutMapping("/{id}")
-    public String update(@RequestBody Book book, @PathVariable("id") Integer id) {
-        System.out.println(">>>>>> id = " + id);
+    public R update(@RequestBody Book book, @PathVariable("id") Integer id) {
         book.setId(id);
         bookService.updateById(book);
-        return "success";
+        return new R(true, "update success");
     }
 
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable("id") Long id) {
+    public R delete(@PathVariable("id") Long id) {
         bookService.removeById(id);
-        return "success";
+        return new R(true, "delete success");
     }
 
     @GetMapping("/page-list")
-    public List<Book> pageList(@RequestParam("page") Integer page, @RequestParam("size") Integer size) {
+    public R pageList(@RequestParam("page") Integer page, @RequestParam("size") Integer size) {
         Page<Book> bookPage = bookService.pageList(page, size);
-        return bookPage.getRecords();
+        PageResponse<Book> response = new PageResponse<>();
+        return new R(true, response.getPageResponse(bookPage));
     }
 
     @GetMapping("/{id}")
     public Book get(@PathVariable("id") Long id) {
         return bookService.getById(id);
     }
-    
+
 }

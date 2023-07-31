@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class R {
     private Boolean flag;
     private Object data;
-    private String msg;
+    private String msg = "";
 
     public R(Boolean flag, Object data) {
         this.flag = flag;

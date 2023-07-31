@@ -22,7 +22,7 @@ Content-Type: application/json
 }
 
 ### 1.3 删除书籍
-DELETE http://localhost:9603/books/48
+DELETE http://localhost:9603/books/44
 
 
 ### 1.4 书籍列表
