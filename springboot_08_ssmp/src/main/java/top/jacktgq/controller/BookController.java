@@ -1,5 +1,6 @@
 package top.jacktgq.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.*;
 import top.jacktgq.pojo.Book;
 import top.jacktgq.service.IBookService;
@@ -49,8 +50,15 @@ public class BookController {
         return "success";
     }
 
+    @GetMapping("/page-list")
+    public List<Book> pageList(@RequestParam("page") Integer page, @RequestParam("size") Integer size) {
+        Page<Book> bookPage = bookService.pageList(page, size);
+        return bookPage.getRecords();
+    }
+
     @GetMapping("/{id}")
     public Book get(@PathVariable("id") Long id) {
         return bookService.getById(id);
     }
+
 }

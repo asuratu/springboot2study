@@ -27,3 +27,6 @@ DELETE http://localhost:9603/books/48
 
 ### 1.4 书籍列表
 GET http://localhost:9603/books
+
+### 1.5 分页书籍列表
+GET http://localhost:9603/books/page-list?page=2&size=2
