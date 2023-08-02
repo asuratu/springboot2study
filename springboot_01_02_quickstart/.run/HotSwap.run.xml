@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="HotSwap" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-    <module name="springboot_01_02_quickstart" />
-    <option name="SPRING_BOOT_MAIN_CLASS" value="com.heima.Springboot0102QuickstartApplication" />
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
-  </configuration>
-</component>

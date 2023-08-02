@@ -52,13 +52,22 @@ public class BookController {
     @GetMapping("/page-list")
     public R pageList(@RequestParam("page") Integer page, @RequestParam("size") Integer size) {
         Page<Book> bookPage = bookService.pageList(page, size);
+
+        // 如果当前页面值大于总页码值，那么重新执行查询操作，使用最大页码值作为当前页码值
+        if (page > bookPage.getPages()) {
+            bookPage = bookService.pageList((int) bookPage.getPages(), size);
+        }
+
         PageResponse<Book> response = new PageResponse<>();
         return new R(true, response.getPageResponse(bookPage));
     }
 
     @GetMapping("/{id}")
-    public Book get(@PathVariable("id") Long id) {
-        return bookService.getById(id);
+    public R get(@PathVariable("id") Long id) {
+        if (id == 22) {
+            throw new RuntimeException("人为故障测试...");
+        }
+        return new R(true, bookService.getById(id));
     }
 
 }

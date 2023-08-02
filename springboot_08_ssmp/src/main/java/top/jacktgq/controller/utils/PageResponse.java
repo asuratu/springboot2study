@@ -31,6 +31,11 @@ public class PageResponse<T> {
         this.data = data;
     }
 
+    /**
+     * 分页响应
+     * @param page 分页对象
+     * @return PageResponse<T>
+     */
     public PageResponse<T> getPageResponse(Page<T> page) {
         return new PageResponse<>(
                 page.getCurrent(),
