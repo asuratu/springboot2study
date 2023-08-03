@@ -1,5 +1,5 @@
 ### 1.0 查看书籍详情
-GET http://localhost:9603/books/22
+GET http://localhost:9605/books/22
 
 ### 1.1 新增书籍
 POST http://localhost:9603/books
