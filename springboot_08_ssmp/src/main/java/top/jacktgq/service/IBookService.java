@@ -10,4 +10,7 @@ import top.jacktgq.pojo.Book;
 public interface IBookService extends IService<Book> {
     // 分页查询
     Page<Book> pageList(Integer page, Integer size);
+
+    // 分页条件查询
+    Page<Book> pageSearchList(Integer page, Integer size, Book book);
 }

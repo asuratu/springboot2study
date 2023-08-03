@@ -29,4 +29,4 @@ DELETE http://localhost:9603/books/44
 GET http://localhost:9603/books
 
 ### 1.5 分页书籍列表
-GET http://localhost:9603/books/page-list?page=200&size=2
+GET http://localhost:9603/books/page-list?page=200&size=2&name=PH&type=解释型&description=PH

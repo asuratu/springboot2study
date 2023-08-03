@@ -50,12 +50,15 @@ public class BookController {
     }
 
     @GetMapping("/page-list")
-    public R pageList(@RequestParam("page") Integer page, @RequestParam("size") Integer size) {
-        Page<Book> bookPage = bookService.pageList(page, size);
+    public R pageList(@RequestParam("page") Integer page, @RequestParam("size") Integer size, Book book) {
+        // 使用 Book 对象接收查询参数
+        System.out.println("查询参数：" + book);
+
+        Page<Book> bookPage = bookService.pageSearchList(page, size, book);
 
         // 如果当前页面值大于总页码值，那么重新执行查询操作，使用最大页码值作为当前页码值
         if (page > bookPage.getPages()) {
-            bookPage = bookService.pageList((int) bookPage.getPages(), size);
+            bookPage = bookService.pageSearchList((int) bookPage.getPages(), size, book);
         }
 
         PageResponse<Book> response = new PageResponse<>();
