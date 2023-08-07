@@ -1,4 +1,4 @@
 server:
   servlet:
     context-path: /ebank
-  port: 87
+  port: 89

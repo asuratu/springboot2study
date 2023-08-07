@@ -7,6 +7,6 @@ spring:
   profiles:
     active: @profile.active@
     group:
-      "dev": devDB, devMVC
+      "dev": devDB, devMVC # 同名的配置会被覆盖, 以最后一个为准, 此处的 port 以 devMVC 为准
       "pro": proDB, proMVC
       "test": testDB, TestMVC
