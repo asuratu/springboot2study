@@ -28,7 +28,7 @@ public class BookController {
     public R index() {
         System.out.println("查询全部书籍 查询全部书籍");
         System.out.println(">>>>>>>>>>>>>> 查询全部书籍");
-        System.out.println("查询全部书籍 查询全部书籍");
+        System.out.println(">>>>>>>>>>>>>> 查询全部书籍");
         System.out.println(">>>>>>>>>>>>>> 查询全部书籍");
         return new R(true, bookService.list());
     }
